@@ -1,0 +1,80 @@
+<ion-header no-border>
+  <ion-navbar transparent no-border>
+    <button ion-button menuToggle>
+      <ion-icon name="menu" color="dark"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="bg">
+    <div padding *ngFor="let profile of profiles">
+      <ion-chip color="theme">
+        <ion-avatar item-start>
+          <ion-text-avatar>></ion-text-avatar>
+        </ion-avatar>
+        <ion-label style="font-weight: bold" >
+          Profil Akaun
+        </ion-label>
+      </ion-chip>
+      <div>
+        <ion-row>
+          <ion-col col-4>
+            <ion-card class="card3">
+                <img src="assets/imgs/pp.png" />        
+            </ion-card>
+  
+          </ion-col>
+          <ion-col align-center padding>
+            <button ion-button  (click)="editProfile({ record: profile })" >Kemaskini Profil</button>
+            <button ion-button  (click)="changePass({ record: profile })"  color="danger" text-wrap>Tukar Kata
+              Laluan</button>
+          </ion-col>
+  
+        </ion-row>
+        <ion-card class="card3" >
+          <ion-list>
+            <ion-item>
+              
+              <ion-label>
+                <p class="inlist">Nama Penuh</p>
+                <h3>{{profile.nama}}</h3>
+              </ion-label>
+            </ion-item>
+            <ion-item>
+              
+              <ion-label>
+                <p class="inlist">Email</p>
+                <h3>{{profile.email}}</h3>
+              </ion-label>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label>
+                <p class="inlist">No. Telefon</p>
+                <h3>{{profile.no_telefon}}</h3>
+              </ion-label>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>
+                <p *ngIf="profile.jenis_akaun == 'P'" class="inlist">Nombor Pelajar</p>
+                <p *ngIf="profile.jenis_akaun == 'X'" class="inlist">Nama Syarikat/Nombor Staf Syarikat</p>
+                <h3>{{profile.matr}}</h3>
+              </ion-label>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>
+                <p class="inlist">Jenis Akaun</p>
+                <!-- <h3>{{profile.jenis_akaun}}</h3> -->
+                <h3 *ngIf="profile.jenis_akaun == 'P'">Pelajar</h3>
+                <h3 *ngIf="profile.jenis_akaun == 'X'">Bukan Pelajar/Staf/Syarikat Luar</h3>
+              </ion-label>
+            </ion-item>
+
+            
+          </ion-list>
+        </ion-card>
+      </div>
+    </div>
+  </ion-content>

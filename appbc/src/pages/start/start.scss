@@ -1,0 +1,45 @@
+page-start {
+    .bg-image {
+        background-image: url("../assets/imgs/bg.jpg");
+        background-size: cover;
+        // background-color: red;
+    }
+    .section1 {
+        height: 50vh;
+    }
+    .section2 {
+        height: 50vh;
+    }
+    .form-button {
+        height: 8vh;
+        width: 70vw;
+        background-color: rgba(197, 110, 110, 0.7);
+    }
+    .login-button {
+        width: 70vw;
+        height: 8vh;
+        background-color: #092781;
+    }
+    .input-design {
+        margin-left: 10px;
+    }
+    .separator {
+        height: 5vh;
+    }
+    .button-add {
+        background-color: #00d9e0;
+        height: 8%;
+        width: 50%;
+        top: 30vh;
+        display: block;
+        margin: auto;
+    }
+    .button-center {
+        background-color: #00d9e0;
+        height: 8%;
+        width: 50%;
+        top: 35vh;
+        display: block;
+        margin: auto;
+    }
+}

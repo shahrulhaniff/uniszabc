@@ -1,0 +1,36 @@
+<ion-header no-border>
+  <ion-navbar transparent>
+    <button ion-button menuToggle>
+      <ion-icon color="dark" name="menu"></ion-icon>
+    </button>
+    
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="bg">
+    <div padding>
+        <ion-chip color="theme">
+          <ion-avatar item-start>
+            <ion-text-avatar>></ion-text-avatar>
+          </ion-avatar>
+          <ion-label style="font-weight: bold" class="color">
+              Proses Pembayaran Selesai
+          </ion-label>
+        </ion-chip>
+
+        <ion-card class="card3" padding>
+    
+            <p class="ita">Anda telah keluar dari pelayar bank. Klik kembali untuk semak aktiviti transaksi dan resit.</p>
+        
+        </ion-card>
+
+
+        <ion-footer>
+            <ion-toolbar >
+                <button ion-button block (click)="home()">KEMBALI</button>
+            </ion-toolbar>
+          </ion-footer>
+
+        </div>
+</ion-content>

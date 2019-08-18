@@ -1,0 +1,70 @@
+<ion-header no-border>
+  <ion-navbar transparent no-border>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="bg">
+
+  <ion-refresher slot="fixed" class="inv" (ionRefresh)="ionRefresh($event)" (ionPull)="ionPull($event)"
+    (ionStart)="ionStart($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles"
+      refreshingText="Refreshing..." color="secondary">
+    </ion-refresher-content>
+  </ion-refresher>
+  <div padding>
+    <ion-chip color="theme">
+      <ion-avatar item-start>
+        <ion-text-avatar>></ion-text-avatar>
+      </ion-avatar>
+      <ion-label style="font-weight: bold">
+        Keterangan Transaksi
+      </ion-label>
+    </ion-chip>
+  </div>
+  <div text-center>
+    <ion-card padding class="fixcard">
+      <h1 style="font-weight: bold"> RM {{(jmlh)}}</h1>
+      <p>{{(trkh)?.substring(8,10)}}/{{(trkh)?.substring(5,7)}}/{{(trkh)?.substring(0,4)}}</p>
+
+      <ion-chip>
+        <ion-label style="font-weight: bold" color="dark">
+          Jenis Transaksi : {{idjnstrnsks}}
+        </ion-label>
+      </ion-chip>
+    </ion-card>
+  </div>
+  <ion-card padding class="card4">
+    <ion-label>
+      <p class="col">Status Dokumen</p>
+      <h2 style="font-weight: bold">&nbsp;{{sttsdoc}}</h2>
+    </ion-label>
+    <ion-label text-wrap>
+      <p class="col">Keterangan Dokumen</p>
+      <h2 style="font-weight: bold" text-wrap>&nbsp;{{descdoc}}</h2>
+    </ion-label>
+    <ion-label>
+      <p class="col">Status Transaksi</p>
+      <h2 style="font-weight: bold">&nbsp;{{sttstrs}}</h2>
+    </ion-label>
+    <ion-label>
+      <p class="col">ID Transaksi</p>
+      <h2 style="font-weight: bold">&nbsp;{{idtr}}</h2>
+    </ion-label>
+    <ion-label>
+      <p class="col">Penerima Dokumen</p>
+      <h2 style="font-weight: bold">&nbsp;{{docaccept}}</h2>
+    </ion-label>
+    <ion-label>
+      <p class="col">Pegawai Yang Memberi Dokumen</p>
+      <h2 style="font-weight: bold">&nbsp;{{docgive}}</h2>
+    </ion-label>
+  </ion-card>
+  <div text-center padding>
+    <!--<button ion-button icon-end full color="primary" round (click)="generate()">Muat Turun Fail
+      <ion-icon name="print"></ion-icon>
+    </button>-->
+  </div>
+
+
+</ion-content>

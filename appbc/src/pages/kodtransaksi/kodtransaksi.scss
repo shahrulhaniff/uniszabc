@@ -1,0 +1,49 @@
+page-kodtransaksi {
+  .inv{
+    color: white;
+    
+  }
+  .has-refresher>.scroll-content {
+    border-top: 0;
+}  
+
+    .ran{
+        vertical-align: middle;
+        display: flex!important;
+        align-content: center!important;
+        align-items: center!important;
+        padding-left: 13px
+      }
+    .pad{
+        padding-right: 5px;
+      }
+    
+      .pads{
+        padding-right: 3px;
+      }
+      
+  .nosb{
+    color: rgb(0, 23, 156);
+    border-radius: 5px;
+  }
+  .harga{
+    color: rgb(22, 102, 2);
+    border-radius: 5px;
+  }
+
+  .card4{
+    border-radius: 5px;
+}
+
+.roundbutt{
+    border-radius :30px;
+}
+
+.inlist2{
+    font-weight: bold;
+    color:#2e3192;
+}
+.ita{
+    font-style: italic;
+}
+}

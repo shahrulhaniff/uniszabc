@@ -1,0 +1,42 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Log masuk sebagai</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="closeModal()">Tutup</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <form [formGroup]="form" (ngSubmit)="saveEntry()">
+
+           <!-- Select Radio Button -->
+            <ion-row radio-group  formControlName="masuk">
+                <ion-item no-lines text-wrap>
+                  <h2>Pilih Kod Pengguna</h2>
+                  (Bagi pengguna yang mempunyai bahagian pengurusan)
+                </ion-item>
+                <ion-col col-12  *ngFor="let val of items">
+                  <ion-item no-lines>
+                    <ion-label> {{val.jenis_pengguna}}</ion-label>
+                    <ion-radio value="{{val.kod_pengguna}}"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+           <!-- Submit Button -->
+           <ion-item>
+              <button
+                 ion-button
+                 color="secondary"
+                 text-center
+                 block
+                 [disabled]="!form.valid">Masuk</button>
+           </ion-item>
+
+
+        </form>
+</ion-content>

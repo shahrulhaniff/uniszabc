@@ -1,0 +1,85 @@
+<ion-header no-border>
+    <ion-navbar  [hidden]="!buttonClicked2" no-border transparent>
+      <button ion-button menuToggle>
+        <ion-icon name="menu" color="dark"></ion-icon>
+      </button>
+      
+      <ion-buttons end class="pad">
+        <button ion-button icon-only color="dark" (click)="onButtonClick()">
+          <ion-icon name="search" color="dark"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+      <!-- Search Event -->
+      <div *ngIf="buttonClicked">
+        <ion-row text-center >
+          <ion-col col-2 class="ran" style="background:white"  >
+              <ion-icon style="zoom:1.4" color="dark"  name="arrow-back" (click)="onButtonClick()" text-center ></ion-icon>
+          </ion-col>
+          <ion-col style="background:white" col-10><ion-input [(ngModel)]="terms" placeholder="Carian..."></ion-input></ion-col>
+        </ion-row>
+    </div>
+    <!-- Done Search Event -->
+  </ion-header>
+
+
+  <ion-content class="bg">
+      <ion-refresher slot="fixed"  class="inv" 
+      (ionRefresh)="ionRefresh($event)" 
+      (ionPull)="ionPull($event)" 
+      (ionStart)="ionStart($event)">
+        <ion-refresher-content 
+          pullingIcon="arrow-dropdown"
+          pullingText="Pull to refresh"
+          refreshingSpinner="circles"
+          refreshingText="Refreshing...">
+        </ion-refresher-content>
+      </ion-refresher>
+      <div padding>
+        <ion-chip color="theme">
+          <ion-avatar item-start>
+            <ion-text-avatar>></ion-text-avatar>
+          </ion-avatar>
+          <ion-label style="font-weight: bold">
+            Senarai Bayaran
+          </ion-label>
+        </ion-chip>
+    
+        <ion-card class="card4" *ngFor="let item of items | search : terms | sort: {property: column, order: order}">
+          <ion-item color="white">
+            <ion-row>
+              <ion-col text-wrap >
+                <div class="inlist2">{{item.description}}</div>
+                <p class="ita">{{item.no_sb}}</p>
+                <p>Jam :{{(item.jam)}}</p>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                Butiran:
+                <p>Tarikh Buka : {{(item.tarikhbuka)?.substring(8,10)}}/{{(item.tarikhbuka)?.substring(5,7)}}/{{(item.tarikhbuka)?.substring(0,4)}}</p>
+                <p>Tarikh Tutup : {{(item.tarikhtutup)?.substring(8,10)}}/{{(item.tarikhtutup)?.substring(5,7)}}/{{(item.tarikhtutup)?.substring(0,4)}}</p>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col >
+                <div *ngIf="!(item.harga == '0.00'||item.harga =='0')">
+                <button ion-button outline>
+                    RM {{(item.harga)}} <!--{{(item.harga)?.toFixed(2)}}-->
+                </button>
+              </div>
+            </ion-col >
+              <ion-col text-right end text-wrap> <button ion-button  (click)="pay(item.id_kodtransaksi)">
+                   Bayar
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-item>
+        </ion-card>
+    
+        
+      </div>
+    
+    
+    
+    </ion-content>

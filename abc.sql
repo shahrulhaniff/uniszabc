@@ -1,4 +1,4 @@
-drop database abc;
+
 create database abc;
 use abc;
 

@@ -5,6 +5,13 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
+
+  .bg5{
+ 
+    background: url("../assets/imgs/submenu.png") no-repeat center center fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
   
   ion-header ion-icon.back-button-icon.icon {
     color: map-get($colors, dark);}

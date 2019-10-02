@@ -3,7 +3,6 @@ import { IonicPage, MenuController, NavController, NavParams, LoadingController,
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Storage } from '@ionic/storage';
-import { DisplayPage } from '../display/display';
 import { GlobalProvider } from "../../providers/global/global";
 import { ProfilePage } from '../profile/profile';
 
@@ -136,7 +135,7 @@ export class LoginPage {
     this.loading.dismiss();
  
     let alert = this.alertCtrl.create({
-      title: 'Access Denied',
+      title: 'Wait..',
       subTitle: text,
       buttons: ['OK']
     });
@@ -217,6 +216,8 @@ export class LoginPage {
       },
       (error : any) =>
       {
+        this.showLoading();
+        this.showError("Check your internet");
          console.dir(error);
       });
   }

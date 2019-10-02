@@ -72,10 +72,10 @@ export class EditprofilePage {
       {
          // If the request was successful notify the user
          this.createSuccess = true;
-         this.showPopup("Profil dikemaskini", "Profil telah berjaya dikemaskini.");
+         this.showPopup("Success", "Profile updated.");
       },
       error => {
-        this.showPopup("Gagal", "Sila cuba lagi sekali.");
+        this.showPopup("Wait", "Dummy Data.");
       });
    }
 

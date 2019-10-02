@@ -6,20 +6,17 @@
   background-size: cover;
 }
 
-  .bg5{
- 
-    background: url("../assets/imgs/submenu.png") no-repeat center center fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  
   ion-header ion-icon.back-button-icon.icon {
-    color: map-get($colors, dark);}
+    color: map-get($colors, light);}
 
   ion-header ion-navbar ion-icon.menuToggle-icon.icon {
-    color: map-get($colors, dark);
+    color: map-get($colors, light);
 }
 
+.menu-inner{
+  background-color: transparent !important;
+  background-color: rgba(32, 32, 32, 0);
+}
 
 .trans{
   background-color: transparent;

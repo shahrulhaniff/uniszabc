@@ -1,8 +1,9 @@
 <ion-header no-border>
-  <ion-navbar transparent no-border>
+  <ion-navbar transparent>
     <button ion-button menuToggle>
-      <ion-icon name="menu" color="dark"></ion-icon>
+      <ion-icon name="menu" color="light"></ion-icon>
     </button>
+    <ion-title><img height="45" src="../assets/imgs/myblockcert_logo.png" ></ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -19,14 +20,13 @@
       <div>
         <ion-card class="card3" >
           <ion-list>
-
-
-
-            
               <ion-item color="theme">
-                 <h1 text-wrap>{{profile.nama}}</h1>
-                 <h3>{{profile.email}}</h3>
-                 </ion-item>
+                  <ion-avatar item-start>
+                    <img src="../assets/imgs/pp.png" style="height: 88px; width: 88px;">
+                  </ion-avatar>
+                  <h1 text-wrap>{{profile.nama}}</h1>
+                  <h3>{{profile.email}}</h3>
+              </ion-item>
                  
 
             <ion-item>
@@ -55,7 +55,7 @@
               <button ion-button  (click)="editProfile({ record: profile })" >Claim</button>
               <button ion-button  (click)="editProfile({ record: profile })" >Scan QR</button>
             </ion-col>
-        </ion-row> -->
+        </ion-row>--> 
 
       <ion-card class="card3">
         <ion-row text-center>
@@ -69,3 +69,4 @@
       </div>
     </div>
   </ion-content>
+      

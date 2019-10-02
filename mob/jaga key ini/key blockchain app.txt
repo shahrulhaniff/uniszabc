@@ -14,5 +14,12 @@ pass : 040471
 CURRENT VERSION :0.0.1 
 id : io.blockchain.unisza
 
-[5] C:/Users/shahrul/AppData/Local/Android/sdk/build-tools/26.0.2/zipalign -v 4 app-release-unsigned.apk unisza.apk
-C:/Users/Amir Fitri/AppData/Local/Android/Sdk/build-tools/28.0.3/zipalign -v 4 app-release-unsigned.apk unisza.apk
+[5] C:/Users/shahrul/AppData/Local/Android/sdk/build-tools/26.0.2/zipalign -v 4 app-release-unsigned.apk myblockcerts.apk
+C:/Users/Amir Fitri/AppData/Local/Android/Sdk/build-tools/28.0.3/zipalign -v 4 app-release-unsigned.apk myblockcerts.apk
+
+
+
+
+
+
+android:usesCleartextTraffic="true"

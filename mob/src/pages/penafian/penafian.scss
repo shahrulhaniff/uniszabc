@@ -1,0 +1,32 @@
+page-penafian {
+
+
+    ion-card {
+      position: relative;
+      text-align: center;
+    
+    }
+
+    .rounded{
+      border-radius: 7px;
+    }
+  
+    .card-title {
+      position: absolute;
+      top: 9%;
+      font-size: 2.0em;
+      width: 100%;
+      font-weight: bold;
+      color: #fff;
+    }
+  
+    .card-subtitle {
+      font-size: 0.9em;
+      position: absolute;
+      top: 27%;
+      width: 100%;
+      color: #fff;
+    }
+  
+  
+}

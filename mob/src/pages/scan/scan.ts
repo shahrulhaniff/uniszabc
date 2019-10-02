@@ -5,6 +5,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { MycertPage } from '../mycert/mycert';
 import { ProfilePage } from '../profile/profile';
 import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser/ngx';
+import { Storage } from '@ionic/storage';
+import { HomePage } from '../home/home';
 
 
 @IonicPage()
@@ -15,9 +17,11 @@ import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser/
 export class ScanPage {
 
   scannedCode = null;
+  private user: any;
 
   constructor(private barcodeScanner: BarcodeScanner, 
               public navCtrl: NavController, 
+              private storage: Storage,
               private inAppBrowser : InAppBrowser,
               platform :Platform) {
 
@@ -55,7 +59,12 @@ export class ScanPage {
 
       this.list=[];
       }else{
-      this.navCtrl.pop;this.navCtrl.setRoot(ProfilePage);
+
+        this.storage.get('user').then((user) => {
+          if(this.user==null) { this.navCtrl.pop;this.navCtrl.setRoot(HomePage);}
+          else {this.navCtrl.pop;this.navCtrl.setRoot(ProfilePage);}
+          
+        });//close storage
     }
     }, (err) => {
         console.log('Error: ', err);

@@ -4,11 +4,11 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ListPage } from '../pages/list/list';
 import { Storage } from '@ionic/storage';
-import { LoginPage } from '../pages/login/login';
 import { ProfilePage } from '../pages/profile/profile';
 import { HubungiPage } from '../pages/hubungi/hubungi';
 import { HomePage } from '../pages/home/home';
-import { HistoryPage } from '../pages/history/history';
+import { PenafianPage } from '../pages/penafian/penafian';
+import { ScanPage } from '../pages/scan/scan';
 
 
 @Component({
@@ -46,7 +46,7 @@ export class MyApp {
     this.storage.get('user').then((user) => {
       this.user = user; console.log("data kat dalam app.co-->"+this.user);
       
-      if(this.user==null) { this.rootPage =LoginPage;}
+      if(this.user==null) { this.rootPage =HomePage;}
       else {this.rootPage=ProfilePage;
       };
 
@@ -61,9 +61,10 @@ export class MyApp {
       this.pages = [
         //{ title: 'Utama', component: DisplayPage , Icon :'home'},
         { title: 'Profile', component: ProfilePage , Icon :'person'},
-        { title: 'My Certificate', component: HistoryPage , Icon :'ios-ribbon'},
+        { title: 'Scan QR', component: 'ScanPage', Icon :'md-qr-scanner' },
+        //{ title: 'My Certificate', component: HistoryPage , Icon :'ios-ribbon'},
         { title: 'Contact Us', component: HubungiPage, Icon :'call' },
-        { title: 'Disclaimer', component: HomePage, Icon :'md-checkmark-circle-outline' },
+        { title: 'Disclaimer', component: PenafianPage, Icon :'md-checkmark-circle-outline' },
         { title: 'Sign Out', component: ListPage, Icon :'log-out' }
       ];
     }

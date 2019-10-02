@@ -30,6 +30,7 @@ import { HubungiPage } from '../pages/hubungi/hubungi';
 import { ClaimPage } from '../pages/claim/claim';
 import { MycertPage } from '../pages/mycert/mycert';
 import { HistoryPage } from '../pages/history/history';
+import { PenafianPage } from '../pages/penafian/penafian';
 
 
 
@@ -51,6 +52,7 @@ import { HistoryPage } from '../pages/history/history';
     HubungiPage,
     ClaimPage,
     MycertPage,
+    PenafianPage,
     ParallaxHeader
     
     
@@ -74,7 +76,8 @@ import { HistoryPage } from '../pages/history/history';
     ChangepassPage,
     HubungiPage,
     ClaimPage,
-    MycertPage
+    MycertPage,
+    PenafianPage
     
   ],
   providers: [

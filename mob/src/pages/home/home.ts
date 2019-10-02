@@ -22,4 +22,12 @@ export class HomePage {
       this.navCtrl.setRoot(LoginPage)
     //});
   }
+
+  
+  login(): void {
+    this.navCtrl.setRoot(LoginPage);
+ }
+ scan(): void {
+    this.navCtrl.push('ScanPage');
+ }
 }

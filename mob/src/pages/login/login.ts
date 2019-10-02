@@ -5,6 +5,7 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Storage } from '@ionic/storage';
 import { GlobalProvider } from "../../providers/global/global";
 import { ProfilePage } from '../profile/profile';
+import { HomePage } from '../home/home';
 
 @IonicPage()
 @Component({
@@ -225,4 +226,7 @@ export class LoginPage {
   // #############################################################################
   // #############################################################################
 
+  home(): void {
+    this.navCtrl.setRoot(HomePage);
+ }
 }

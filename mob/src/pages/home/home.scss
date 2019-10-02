@@ -30,10 +30,12 @@ page-home {
 }
 
 .bg{
- 
-  background: url("../assets/imgs/Bg.png") no-repeat center center fixed; 
+  background: url("../assets/imgs/Bg2.png") no-repeat center center fixed;
+  //background: url("../assets/imgs/Bg.png") no-repeat center center fixed; 
   background-repeat: no-repeat;
   background-size: cover;
+  //flex-shrink: 0;
+  //flex-wrap: wrap;
 }
 
 .inlist{
@@ -42,12 +44,15 @@ page-home {
 }
 
 .card3{
-  border-radius: 7px;
+  border-radius: 15px;
   background-color: transparent;
 }
 .card4{
   border-radius: 7px;
   background-color: light;
+}
+.border1{
+  border: 1px solid #f3f702;
 }
 
 .menuicon {
@@ -57,7 +62,28 @@ page-home {
   height: 50px;
 }
 .iconsize {
-  color:#464646;
+  //color:#464646;
+  color:#d4d4a4;
   font-size: 90px;
+}
+
+.mylogo{
+  display: block;
+  margin: auto; 
+  border-radius: 20px;
+}
+.card-center {
+  margin-top: 10%;
+  height: 100%; 
+  display: block;
+  align-items: center; 
+  justify-content: center;
+}
+.border2 {
+  margin-top: 2%;
+  background: rgba(0, 0, 0, .5);
+  padding: 20px 20px 20px 20px;
+  border-radius : 15px;
+  border: 1px solid #f3f702;
 }
 }

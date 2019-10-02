@@ -1,9 +1,9 @@
 <?php
    if (empty($_SESSION['user'])) { header("Access-Control-Allow-Origin: *");}
    $hn      = 'localhost';
-   $un      = 'root';
-   $pwd     = '';
-   $db      = 'abc';
+   $un      = 'id9453057_cashless'; //root
+   $pwd     = 'id9453057_cashless';
+   $db      = 'id9453057_cashless'; //abc
    $cs      = 'utf8';
 
 	

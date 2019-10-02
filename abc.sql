@@ -1,6 +1,7 @@
 
-create database abc;
-use abc;
+-- create database abc;
+-- use abc;
+use id9453057_cashless;
 
 create table users(
 	usrid varchar(10) PRIMARY KEY,

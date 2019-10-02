@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 import { Storage } from '@ionic/storage';
 import { GlobalProvider } from "../../providers/global/global";
-import { HistorydetailPage } from '../historydetail/historydetail';
 
 /**
  * Generated class for the HistoryPage page.
@@ -81,7 +80,7 @@ export class HistoryPage {
   
   viewEntry(param : any) : void
   {
-    this.navCtrl.push(HistorydetailPage, param);
+    this.navCtrl.push(HistoryPage, param);
      //idt = idt;
      console.log("idt"+this.idt);
     // this.navCtrl.push('HistorydetailPage', {dataidt: idt});

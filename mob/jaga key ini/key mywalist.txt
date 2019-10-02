@@ -4,8 +4,9 @@ ionic cordova plugin rm cordova-plugin-console
 UPDATE VERSION DAH????
 (1) ionic cordova build --release android
 
-keytool -genkey -v -keystore cashless-release-key.keystore -alias releaseNewKey -keyalg RSA -keysize 2048 -validity 10000
-pass : cashless123
+keytool -genkey -v -keystore blockchain-release-key.keystore -alias releaseNewKey -keyalg RSA -keysize 2048 -validity 10000
+pass : cashless123 
+PASS BLOCKCHAIN : 040471
 
 //dia tukar android-release-unsigned.apkke app-release-unsigned.apk ... update kot
 (2) //pastikan copy android-release-unsigned.apk kat luar kalau tak dia tak jumpa jar

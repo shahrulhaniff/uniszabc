@@ -18,6 +18,11 @@ page-profile {
         }
       }
 
+      ion-title {
+        line-height: 10px;
+        padding-left: 50px;
+     }
+
       
   .edit{
     //color: #788cfd;
@@ -31,7 +36,7 @@ page-profile {
 
 .bg{
  
-  background: url("../assets/imgs/Bg.png") no-repeat center center fixed; 
+  background: url("../assets/imgs/Bg1.png") no-repeat center center fixed; 
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -57,7 +62,7 @@ page-profile {
   height: 50px;
 }
 .iconsize {
-  color:#464646;
-  font-size: 90px;
+  color:#2c2c2c;
+  font-size: 70px;
 }
 }

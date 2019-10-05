@@ -26,7 +26,15 @@ export class ScanPage {
               private inAppBrowser : InAppBrowser,
               platform :Platform) {
 
-    let backAction = platform.registerBackButtonAction(() => {console.log("second");this.navCtrl.pop;this.navCtrl.setRoot(ProfilePage);backAction();},2)
+                this.storage.get('user').then((user) => {
+                  if(user==null) { 
+                    let backAction = platform.registerBackButtonAction(() => {console.log("second");this.navCtrl.pop;this.navCtrl.setRoot(LoginPage);backAction();},2);
+                  }
+                  else {
+                    let backAction = platform.registerBackButtonAction(() => {console.log("second");this.navCtrl.pop;this.navCtrl.setRoot(ProfilePage);backAction();},2);
+                  }
+                });//close storage
+    
    }
 
   ionViewDidLoad() {
@@ -35,7 +43,7 @@ export class ScanPage {
 
   ionViewWillEnter(){this.scanCode();};
 
-  public list : Array<any> = [];
+  //public list : Array<any> = [];
   scanCode() {
     this.barcodeScanner.scan().then(barcodeData => {
       this.scannedCode = barcodeData.text;
@@ -57,14 +65,12 @@ export class ScanPage {
       } */
       let uri = this.scannedCode;
       this.openWebpage(uri);
-
-      this.list=[];
+      //this.list=[];
       }else{
 
         this.storage.get('user').then((user) => {
-          if(this.user==null) { this.navCtrl.pop;this.navCtrl.setRoot(LoginPage);}
+          if(user==null) { this.navCtrl.pop;this.navCtrl.setRoot(LoginPage);}
           else {this.navCtrl.pop;this.navCtrl.setRoot(ProfilePage);}
-          
         });//close storage
     }
     }, (err) => {

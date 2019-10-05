@@ -6,7 +6,7 @@
 
 [4.a] jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore cashless-release-key.keystore app-release-unsigned.apk releaseNewKey
 pass : cashless123  
-CURRENT VERSION : 0.1.15 
+CURRENT VERSION : 0.1.17
 id : io.cashless.unisza
 
 [4.b] jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore blockchain-release-key.keystore app-release-unsigned.apk releaseNewKey

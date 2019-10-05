@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform, Events, Icon } from 'ionic-angular';
+import { Nav, Platform, Events } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ListPage } from '../pages/list/list';
@@ -59,7 +59,7 @@ export class MyApp {
      // Side menu for User test
     if(kod_pengguna ='1') {
       this.pages = [
-        { title: 'Home', component: StartPage , Icon :'home'},
+        { title: 'My Certificate', component: StartPage , Icon :'ios-ribbon-outline'},
         { title: 'Profile', component: ProfilePage , Icon :'person'},
         { title: 'Scan QR', component: 'ScanPage', Icon :'md-qr-scanner' },
         //{ title: 'My Certificate', component: HistoryPage , Icon :'ios-ribbon'},

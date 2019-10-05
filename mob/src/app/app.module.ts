@@ -31,7 +31,6 @@ import { MycertPage } from '../pages/mycert/mycert';
 import { HistoryPage } from '../pages/history/history';
 import { PenafianPage } from '../pages/penafian/penafian';
 import { StartPage } from '../pages/start/start';
-import { AnimatesDirective, AnimationService } from 'css-animator';
 
 
 
@@ -54,8 +53,7 @@ import { AnimatesDirective, AnimationService } from 'css-animator';
     StartPage,
     MycertPage,
     PenafianPage,
-    ParallaxHeader, 
-    AnimatesDirective
+    ParallaxHeader
     
     
   ],
@@ -91,8 +89,7 @@ import { AnimatesDirective, AnimationService } from 'css-animator';
     GlobalProvider,
     InAppBrowser,
     File,
-    FileOpener,
-    AnimationService
+    FileOpener
     
 
   ]

@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams ,MenuController} from 'ionic-angular';
 import { MycertPage } from '../mycert/mycert';
 import { GlobalProvider } from "../../providers/global/global";
 import { Storage } from '@ionic/storage';
 import { HttpClient } from '@angular/common/http';
+import { AnimationService, AnimationBuilder } from 'css-animator';
 
 
 @IonicPage()
@@ -13,6 +14,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class StartPage {
   
+  @ViewChild('myElement') myElem;
+  private animator: AnimationBuilder;
+
   public profiles : Array<any> = [];
   private baseURI : string  = this.global.mysite; 
 
@@ -21,8 +25,13 @@ export class StartPage {
               public navParams: NavParams,
               public global   : GlobalProvider,
               public menuCtrl: MenuController,
-              public storage  : Storage) {
+              public storage  : Storage,
+              animationService: AnimationService) {
               this.menuCtrl.enable(true, 'myMenu');
+              this.animator = animationService.builder();
+  }
+  animateElem() {
+    this.animator.setType('flipInX').show(this.myElem.nativeElement);
   }
 
   ionViewDidLoad() {

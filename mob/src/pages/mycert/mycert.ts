@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController,LoadingController,Loading } from 'ionic-angular';
 import { StartPage } from '../start/start';
 
 
@@ -10,7 +10,13 @@ import { StartPage } from '../start/start';
 })
 export class MycertPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  loading: Loading;
+  createSuccess = false;
+
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams,
+              private alertCtrl : AlertController,
+              private loadingCtrl: LoadingController) {
   }
 
   ionViewDidLoad() {
@@ -20,4 +26,40 @@ export class MycertPage {
   cancel(){
     this.navCtrl.setRoot(StartPage);
   }
+
+
+  //showloading
+  showLoading() {
+    this.loading = this.loadingCtrl.create({
+      content: 'Please wait...',
+      dismissOnPageChange: true
+    });
+    this.loading.present();
+  }
+
+  //Untuk Popup
+  showPopup(title, text) {
+    let alert = this.alertCtrl.create({
+      title: title,
+      subTitle: text,
+      buttons: [
+        {
+          text: 'OK',
+          handler: data => {
+            if (this.createSuccess) {
+              this.navCtrl.popToRoot();
+            }
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
+  popup(){
+    this.showLoading();
+    this.showPopup("Congratulations", "Certificate Claimed");
+    this.loading.dismiss();
+  }
+  
 }

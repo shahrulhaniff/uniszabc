@@ -30,13 +30,13 @@
           <h1 text-wrap>{{profile.nama}}</h1>
           <h3>{{profile.email}}</h3>
       </ion-item>
-    <ion-item class="top_line">
+    <ion-item color="card1" class="top_line">
       <ion-label>
         <p class="bold">Highest Certificate</p>
         <h3>{{profile.cert}}</h3>
       </ion-label>
     </ion-item>
-    <ion-item>
+    <ion-item color="card1" >
       <ion-label>
         <p class="bold">Matric Number</p>
         <h3>BTAL15040471</h3>
@@ -56,7 +56,7 @@
           </ion-col>
         </ion-row>
       </ion-item>
-      <ion-item (click)="claim()" class="top_line1">
+      <ion-item (click)="claim()" class="top_line1" color="card2">
             <ion-icon name="md-list-box"></ion-icon> &nbsp; CLAIM
         </ion-item>
 
@@ -74,7 +74,6 @@
     </ion-list>
   </ion-card>
 
-
   <ion-card>
       <ion-list>
         <ion-item-sliding>
@@ -84,12 +83,9 @@
                     <h2 class="bold">Diploma Teknologi Maklumat</h2>
                   </ion-col>
                 </ion-row>
-                
                 <i><h3>2012-2014</h3></i>
-                
             </ion-item>
             <ion-item-options side="right">
-              
               <button ion-button color="secondary">
                 <ion-icon name="locate"></ion-icon>
                 Locate
@@ -102,8 +98,6 @@
           </ion-item-sliding>
         </ion-list>
       </ion-card>
-
-
 </div>
 
 <!--<ion-card class="card4">
@@ -113,4 +107,8 @@
           <br>Claim Certificate!</ion-col>
   </ion-row>
 </ion-card>-->
+
+            <!--<div animates #animation="animates" text-center>
+              <button ion-button (click)="animation.start({type: 'rubberBand', duration: '1000'})">Click me!</button>
+            </div> -->
 </ion-content>

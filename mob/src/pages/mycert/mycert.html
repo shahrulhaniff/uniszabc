@@ -45,11 +45,8 @@
       <ion-row>
           <ion-col>
               <ion-buttons color="theme">
-                  <button ion-button full color="success">CLAIM &nbsp; &nbsp;<ion-icon name="md-checkmark"></ion-icon></button>
+                  <button (click)="popup()" ion-button full color="success">CLAIM &nbsp; &nbsp;<ion-icon name="md-checkmark"></ion-icon></button>
               </ion-buttons>    
-          </ion-col>
-          <ion-col>
-              <button (click)="cancel()" ion-button full color="danger">CANCEL &nbsp; &nbsp;<ion-icon name="ios-close"></ion-icon></button>
           </ion-col>
         </ion-row>
         <ion-row><ion-col><button ion-button full color="theme">DOWNLOAD</button></ion-col></ion-row>

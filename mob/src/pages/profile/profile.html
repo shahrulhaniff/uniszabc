@@ -3,27 +3,29 @@
     <button ion-button menuToggle>
       <ion-icon name="menu" color="light"></ion-icon>
     </button>
-    <ion-title><img height="45" src="../assets/imgs/myblockcert_logo.png" ></ion-title>
+    <ion-title></ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content class="bg">
     <div padding *ngFor="let profile of profiles">
-      <ion-chip color="theme">
+      <!--<ion-chip color="theme">
         <ion-avatar item-start>
           <ion-text-avatar>></ion-text-avatar>
         </ion-avatar>
         <ion-label style="font-weight: bold" >
           Profile
         </ion-label>
-      </ion-chip>
-      <div>
-        <ion-card class="card3" >
+      </ion-chip> -->
+        <ion-card>
           <ion-list>
-              <ion-item color="theme">
-                  <ion-avatar item-start>
+            <ion-item class="header">
+              <ion-icon name="ios-contact"></ion-icon> &nbsp;MY PROFILE
+            </ion-item>
+              <ion-item class="top_line" color="theme">
+                  <!--<ion-avatar item-start>
                     <img src="../assets/imgs/pp.png" style="height: 88px; width: 88px;">
-                  </ion-avatar>
+                  </ion-avatar> -->
                   <h1 text-wrap>{{profile.nama}}</h1>
                   <h3>{{profile.email}}</h3>
               </ion-item>
@@ -32,15 +34,26 @@
             <ion-item>
               
               <ion-label>
-                <p class="inlist">Highest Certificate</p>
+                <p class="bold">Highest Certificate</p>
                 <h3>{{profile.cert}}</h3>
               </ion-label>
             </ion-item>
             <ion-item>
-              
               <ion-label>
-                <p class="inlist">Info</p>
-                <h3>place info here</h3>
+                <p class="bold">Matric Number</p>
+                <h3>BTAL15040471</h3>
+              </ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>
+                <p class="bold">Address</p>
+                <h3>A01 Kampung Baru Jambu Pantai Timur,<br> 22000 Kuala Terengganu</h3>
+              </ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>
+                <p class="bold">Working Status [SAMPLE]</p>
+                <h3>Working</h3>
               </ion-label>
             </ion-item>
 
@@ -48,26 +61,19 @@
           
         </ion-card>
 
-        <!--<ion-row>
-            <ion-col align-center padding>
-              <button ion-button  (click)="editProfile({ record: profile })" >Update</button>
-              <button ion-button  (click)="changePass({ record: profile })"  color="danger" text-wrap>Change Password</button>
-              <button ion-button  (click)="editProfile({ record: profile })" >Claim</button>
-              <button ion-button  (click)="editProfile({ record: profile })" >Scan QR</button>
-            </ion-col>
-        </ion-row>--> 
-
-      <ion-card class="card3">
+      <!--<ion-card class="card3">
         <ion-row text-center>
-            <ion-col (click)="certinfo()" align-center padding col-6><ion-icon name="ios-ribbon-outline" class="iconsize"></ion-icon><br>Claim/Cert Info</ion-col>
-            <ion-col (click)="scan()" align-center padding col-6><ion-icon name="ios-camera-outline" class="iconsize"></ion-icon><br>QR-Scanner</ion-col>
-            <ion-col (click)="editProfile({ record: profile })" align-center padding col-6><ion-icon name="ios-construct-outline" class="iconsize"></ion-icon><br>Update</ion-col>
-            <ion-col (click)="changePass({ record: profile })" align-center padding col-6><ion-icon name="ios-key-outline" class="iconsize"></ion-icon><br>Change Password</ion-col>
-            <!--<ion-col (click)="changePass({ record: profile })" align-center padding col-6><ion-icon name="ios-key-outline" class="iconsize"></ion-icon><br>Change Password</ion-col>-->
-        
+            <ion-col class="border2" (click)="certinfo()" align-center padding col-6><ion-icon name="ios-ribbon-outline" class="iconsize"></ion-icon><br>Claim/Cert Info</ion-col>
+            <ion-col class="border2" (click)="scan()" align-center padding col-6><ion-icon name="ios-camera-outline" class="iconsize"></ion-icon><br>QR-Scanner</ion-col>
+            <ion-col class="border2" (click)="editProfile({ record: profile })" align-center padding col-6><ion-icon name="ios-construct-outline" class="iconsize"></ion-icon><br>Update</ion-col>
+            <ion-col class="border2" (click)="logout()" align-center padding col-6><ion-icon name="ios-log-out-outline" class="iconsize"></ion-icon><br>Logout</ion-col>
+            <ion-col (click)="changePass({ record: profile })" align-center padding col-6><ion-icon name="ios-key-outline" class="iconsize"></ion-icon><br>Change Password</ion-col> 
       </ion-row>
-    </ion-card>
-      </div>
+    </ion-card>-->
+
+
+
+
     </div>
   </ion-content>
       

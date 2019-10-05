@@ -4,8 +4,7 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Storage } from '@ionic/storage';
 import { GlobalProvider } from "../../providers/global/global";
-import { ProfilePage } from '../profile/profile';
-import { HomePage } from '../home/home';
+import { StartPage } from '../start/start';
 
 @IonicPage()
 @Component({
@@ -79,7 +78,7 @@ export class LoginPage {
           //this.kodpengguna = "1";
           this.events.publish('user:2');
           this.storage.get('user').then((user) => { console.log("simpan storage "+user); });
-          this.navCtrl.setRoot(ProfilePage, { data: this.usrid });
+          this.navCtrl.setRoot(StartPage, { data: this.usrid });
         }
         else if (record=='Denied'){
           this.showError("Check your password");
@@ -226,7 +225,7 @@ export class LoginPage {
   // #############################################################################
   // #############################################################################
 
-  home(): void {
-    this.navCtrl.setRoot(HomePage);
+  scan(): void {
+    this.navCtrl.push('ScanPage');
  }
 }

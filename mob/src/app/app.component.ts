@@ -6,9 +6,9 @@ import { ListPage } from '../pages/list/list';
 import { Storage } from '@ionic/storage';
 import { ProfilePage } from '../pages/profile/profile';
 import { HubungiPage } from '../pages/hubungi/hubungi';
-import { HomePage } from '../pages/home/home';
 import { PenafianPage } from '../pages/penafian/penafian';
-import { ScanPage } from '../pages/scan/scan';
+import { StartPage } from '../pages/start/start';
+import { LoginPage } from '../pages/login/login';
 
 
 @Component({
@@ -46,8 +46,8 @@ export class MyApp {
     this.storage.get('user').then((user) => {
       this.user = user; console.log("data kat dalam app.co-->"+this.user);
       
-      if(this.user==null) { this.rootPage =HomePage;}
-      else {this.rootPage=ProfilePage;
+      if(this.user==null) { this.rootPage =LoginPage;}
+      else {this.rootPage=StartPage;
       };
 
 
@@ -59,7 +59,7 @@ export class MyApp {
      // Side menu for User test
     if(kod_pengguna ='1') {
       this.pages = [
-        //{ title: 'Utama', component: DisplayPage , Icon :'home'},
+        { title: 'Home', component: StartPage , Icon :'home'},
         { title: 'Profile', component: ProfilePage , Icon :'person'},
         { title: 'Scan QR', component: 'ScanPage', Icon :'md-qr-scanner' },
         //{ title: 'My Certificate', component: HistoryPage , Icon :'ios-ribbon'},
@@ -85,9 +85,6 @@ export class MyApp {
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
-
-
-  
   namadata ="";
 
 }

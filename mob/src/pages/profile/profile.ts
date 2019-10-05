@@ -5,7 +5,8 @@ import { HttpClient } from '@angular/common/http';
 import { Storage } from '@ionic/storage';
 import { EditprofilePage } from '../editprofile/editprofile';
 import { ChangepassPage } from '../changepass/changepass';
-import { ClaimPage } from '../claim/claim';
+import { ListPage } from '../list/list';
+import { StartPage } from '../start/start';
 
 
 @IonicPage()
@@ -29,7 +30,7 @@ export class ProfilePage {
   }
 
   ionViewWillEnter() {
-    this.load(); 
+    this.load();
     console.log('ionViewDidLoad ProfilePage');
   }
 
@@ -68,11 +69,14 @@ export class ProfilePage {
     this.navCtrl.push(ChangepassPage, params);
   }
   certinfo(params : any){
-    this.navCtrl.push(ClaimPage, params);
+    this.navCtrl.push(StartPage, params);
   }
   
   scan(): void {
-     this.navCtrl.push('ScanPage');
-  }
+    this.navCtrl.push('ScanPage');
+ }
+ logout(): void {
+    this.navCtrl.push(ListPage);
+ }
 
 }

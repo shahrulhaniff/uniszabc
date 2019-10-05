@@ -1,0 +1,77 @@
+page-start {
+
+    ion-title {
+      line-height: 10px;
+      padding-left: 35px;
+    }
+    .bg{
+      background: url("../assets/imgs/Bg1.png") no-repeat center center fixed;
+      background-repeat: no-repeat;
+       background-size: cover;
+       display: block;
+       margin-left: auto;
+       margin-right: auto
+    }
+    .top_line {
+     border-top: 2px solid rgb(0, 10, 26);
+    }
+    .top_line1 {
+     color: rgba(107, 88, 2, 0.904);
+     border-top: 1px solid rgb(0, 10, 26);
+     font-weight: bold;
+    }
+    .bold{
+      color: rgb(0, 0, 0);
+      font-weight: bold;
+    }
+    .small{
+      width: 6rem;
+      color: rgb(226, 24, 24);
+      border-radius: 2px;
+    }
+      .rounded{
+        border-radius: 7px;
+      }
+      .iconsize {
+          color:#464646;
+          font-size: 200px;
+        }
+      .iconsize2 {
+          color:#464646;
+          font-size: 100px;
+        }
+        
+      .card3{
+        border-radius: 7px;
+        background-color: transparent;
+      }
+      .card4{
+          border-radius: 7px;
+          background-color: light;
+      }
+      .card-title {
+        font-size: 2.0em;
+        width: 100%;
+        font-weight: bold;
+        color: #fff;
+      }
+    
+      .card-subtitle {
+        font-size: 0.9em;
+        width: 100%;
+        color: #fff;
+      }
+  
+      #cart-btn {
+        position: relative;
+     }
+     
+     #cart-badge {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        background-color: red;
+        color: rgb(253, 2, 2);
+     }
+  }
+  

@@ -27,10 +27,10 @@ import { File } from '@ionic-native/file/ngx';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
 import { ParallaxHeader } from '../directives/parallax-header/parallax-header';
 import { HubungiPage } from '../pages/hubungi/hubungi';
-import { ClaimPage } from '../pages/claim/claim';
 import { MycertPage } from '../pages/mycert/mycert';
 import { HistoryPage } from '../pages/history/history';
 import { PenafianPage } from '../pages/penafian/penafian';
+import { StartPage } from '../pages/start/start';
 
 
 
@@ -50,7 +50,7 @@ import { PenafianPage } from '../pages/penafian/penafian';
     ChangepassPage,
     IonTextAvatar,
     HubungiPage,
-    ClaimPage,
+    StartPage,
     MycertPage,
     PenafianPage,
     ParallaxHeader
@@ -75,7 +75,7 @@ import { PenafianPage } from '../pages/penafian/penafian';
     EditprofilePage,
     ChangepassPage,
     HubungiPage,
-    ClaimPage,
+    StartPage,
     MycertPage,
     PenafianPage
     

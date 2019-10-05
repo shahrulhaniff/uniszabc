@@ -7,6 +7,7 @@ import { ProfilePage } from '../profile/profile';
 import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser/ngx';
 import { Storage } from '@ionic/storage';
 import { HomePage } from '../home/home';
+import { LoginPage } from '../login/login';
 
 
 @IonicPage()
@@ -61,7 +62,7 @@ export class ScanPage {
       }else{
 
         this.storage.get('user').then((user) => {
-          if(this.user==null) { this.navCtrl.pop;this.navCtrl.setRoot(HomePage);}
+          if(this.user==null) { this.navCtrl.pop;this.navCtrl.setRoot(LoginPage);}
           else {this.navCtrl.pop;this.navCtrl.setRoot(ProfilePage);}
           
         });//close storage

@@ -1,16 +1,16 @@
 
 .bg4{
  
-  background: url("../assets/imgs/menubg.png") no-repeat center center fixed;
+  background: url("../assets/imgs/header_menu.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
   ion-header ion-icon.back-button-icon.icon {
-    color: map-get($colors, light);}
+    color: map-get($colors, dark);}
 
   ion-header ion-navbar ion-icon.menuToggle-icon.icon {
-    color: map-get($colors, light);
+    color: map-get($colors, dark);
 }
 
 .menu-inner{
@@ -23,6 +23,10 @@
   border-color: rgba(0, 0, 0, 0);
 	background-color: rgba(0, 0, 0, 0);
 	color: white; 
+}
+
+.bottom{
+  background-color: #dad8d8; 
 }
 
 $bar-stable-text: #222;

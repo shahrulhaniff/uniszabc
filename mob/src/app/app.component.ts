@@ -4,6 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ListPage } from '../pages/list/list';
 import { Storage } from '@ionic/storage';
+import { GlobalProvider } from "../providers/global/global";
 import { ProfilePage } from '../pages/profile/profile';
 import { HubungiPage } from '../pages/hubungi/hubungi';
 import { PenafianPage } from '../pages/penafian/penafian';
@@ -18,13 +19,14 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any ;
-  
+
   private user: any;
 
-  pages: Array<{title: string, component: any,Icon:any}>;
+  pages: any;
 
 
-  constructor(public platform: Platform, 
+  constructor(public global: GlobalProvider,
+              public platform: Platform, 
               public statusBar: StatusBar, 
               public splashScreen: SplashScreen,
               private storage: Storage,
@@ -64,8 +66,8 @@ export class MyApp {
         { title: 'Scan QR', component: 'ScanPage', Icon :'md-qr-scanner' },
         //{ title: 'My Certificate', component: HistoryPage , Icon :'ios-ribbon'},
         { title: 'Contact Us', component: HubungiPage, Icon :'call' },
-        { title: 'Disclaimer', component: PenafianPage, Icon :'md-checkmark-circle-outline' },
-        { title: 'Sign Out', component: ListPage, Icon :'log-out' }
+        { title: 'Disclaimer', component: PenafianPage, Icon :'md-checkmark-circle-outline' }
+        //{ title: 'Sign Out', component: ListPage, Icon :'log-out' }
       ];
     }
   });
@@ -86,5 +88,9 @@ export class MyApp {
     this.nav.setRoot(page.component);
   }
   namadata ="";
+
+  logout(){
+    this.nav.push(ListPage);
+  }
 
 }

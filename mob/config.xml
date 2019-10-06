@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.cashless.unisza" version="0.1.18" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>BLOCKCHAIN</name>
+    <name>myBLOCKCERT</name>
     <description>UniSZA Blockchain</description>
     <author email="shahrul@myraxsoft.com" href="https://myraxsoft.com/">Raxsoft Team</author>
     <content src="index.html" />
@@ -109,4 +109,5 @@
         <string>To scan QR code of payment document</string>
     </config-file>
     <engine name="android" spec="7.1.4" />
+    <engine name="ios" spec="5.0.1" />
 </widget>

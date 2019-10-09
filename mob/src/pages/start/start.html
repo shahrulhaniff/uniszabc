@@ -8,6 +8,9 @@
 </ion-header>
 
 <ion-content class="bg">
+    <div padding>
+    
+    </div>
   
 <!--<ion-card class="rounded" text-center>
     <img src="assets/imgs/konvo.jpg"/>
@@ -21,19 +24,21 @@
   </div> 
 </ion-card>-->
 
-<!-- Start Profile -->
-<div padding *ngFor="let profile of profiles">
+<!-- Start Profile 
+<div padding *ngFor="let profile of profiles">-->
 <ion-card class="card3" >
   <ion-list>
       <ion-item color="theme">
           <ion-icon item-start name="md-bookmarks"></ion-icon> 
-          <h1 text-wrap>{{profile.nama}}</h1>
-          <h3>{{profile.email}}</h3>
+          <!--<h1 text-wrap>{{profile.nama}}</h1> 
+          <h3>{{profile.email}}</h3>-->
+          <h1 text-wrap>MUHAMMAD SHAHRUL HANIFF BIN OSMAN</h1> 
+          <h3>shahrul@putra.unisza.edu.my</h3>
       </ion-item>
     <ion-item class="top_line">
-      <ion-label>
+      <ion-label text-wrap>
         <p class="bold">Highest Certificate</p>
-        <h3>{{profile.cert}}</h3>
+        <h3>Bachelor in Science Computer Software Development with Honor </h3>
       </ion-label>
     </ion-item>
     <ion-item>
@@ -101,9 +106,9 @@
           </ion-item-sliding>
         </ion-list>
       </ion-card>
-</div>
+<!--</div>
 
-<!--<ion-card class="card4">
+<ion-card class="card4">
     <ion-row text-center>
         <ion-col (click)="claim()" align-center padding col-12><ion-icon name="ios-ribbon-outline" class="iconsize2" id="cart-btn"></ion-icon>
           <ion-badge id="cart-badge">.</ion-badge>

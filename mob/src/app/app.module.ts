@@ -28,7 +28,6 @@ import { FileOpener } from '@ionic-native/file-opener/ngx';
 import { ParallaxHeader } from '../directives/parallax-header/parallax-header';
 import { HubungiPage } from '../pages/hubungi/hubungi';
 import { MycertPage } from '../pages/mycert/mycert';
-import { HistoryPage } from '../pages/history/history';
 import { PenafianPage } from '../pages/penafian/penafian';
 import { StartPage } from '../pages/start/start';
 
@@ -45,7 +44,6 @@ import { StartPage } from '../pages/start/start';
     SearchPipe,
     SortPipe,
     ProfilePage,
-    HistoryPage,
     EditprofilePage,
     ChangepassPage,
     IonTextAvatar,
@@ -71,7 +69,6 @@ import { StartPage } from '../pages/start/start';
     ListPage,
     LoginPage,
     ProfilePage,
-    HistoryPage,
     EditprofilePage,
     ChangepassPage,
     HubungiPage,

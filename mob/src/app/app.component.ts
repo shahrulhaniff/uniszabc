@@ -64,7 +64,6 @@ export class MyApp {
         { title: 'My Certificate', component: StartPage , Icon :'ios-ribbon-outline'},
         { title: 'Profile', component: ProfilePage , Icon :'person'},
         { title: 'Scan QR', component: 'ScanPage', Icon :'md-qr-scanner' },
-        //{ title: 'My Certificate', component: HistoryPage , Icon :'ios-ribbon'},
         { title: 'Disclaimer', component: PenafianPage, Icon :'md-checkmark-circle-outline' },
         { title: 'Contact Us', component: HubungiPage, Icon :'call' }
         //{ title: 'Sign Out', component: ListPage, Icon :'log-out' }

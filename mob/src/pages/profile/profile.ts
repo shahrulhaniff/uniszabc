@@ -30,13 +30,13 @@ export class ProfilePage {
   }
 
   ionViewWillEnter() {
-    this.load();
+    //this.load();
     console.log('ionViewDidLoad ProfilePage');
   }
 
   kodpengguna = "";
 
-  load() : void
+ /* load() : void
   {
     this.storage.get('kod_pengguna').then((kod_pengguna) => { 
     this.kodpengguna = kod_pengguna; console.log("session kod pengguna dekat profile",kod_pengguna);
@@ -59,7 +59,7 @@ export class ProfilePage {
      });
      //--------------------------------------------------
    }); //close storage
-  }
+  } */
 
   editProfile(params : any){
     this.navCtrl.push(EditprofilePage, params);

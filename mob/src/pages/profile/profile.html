@@ -8,7 +8,10 @@
 </ion-header>
 
 <ion-content class="bg">
-    <div padding *ngFor="let profile of profiles">
+<div padding>
+
+</div>
+    <!--<div padding *ngFor="let profile of profiles">-->
       <!--<ion-chip color="theme">
         <ion-avatar item-start>
           <ion-text-avatar>></ion-text-avatar>
@@ -17,7 +20,7 @@
           Profile
         </ion-label>
       </ion-chip> -->
-        <ion-card>
+        <ion-card class="card3">
           <ion-list>
             <ion-item class="header">
               <ion-icon name="ios-contact"></ion-icon> &nbsp;MY PROFILE
@@ -26,8 +29,8 @@
                   <!--<ion-avatar item-start>
                     <img src="../assets/imgs/pp.png" style="height: 88px; width: 88px;">
                   </ion-avatar> -->
-                  <h1 text-wrap>{{profile.nama}}</h1>
-                  <h3>{{profile.email}}</h3>
+                  <h1 text-wrap>Muhammad Shahrul Haniff bin Osman</h1>
+                  <h3>shahrul@putra.unisza.edu.my</h3>
               </ion-item>
                  
 
@@ -35,7 +38,7 @@
               
               <ion-label>
                 <p class="bold">Highest Certificate</p>
-                <h3>{{profile.cert}}</h3>
+                <h3>Bachelor in Science Computer Software Development with Honor</h3>
               </ion-label>
             </ion-item>
             <ion-item>
@@ -52,7 +55,7 @@
             </ion-item>
             <ion-item>
               <ion-label>
-                <p class="bold">Working Status [SAMPLE]</p>
+                <p class="bold">Working Status</p>
                 <h3>Working</h3>
               </ion-label>
             </ion-item>
@@ -73,6 +76,6 @@
 
 
 
-    </div>
+    <!--</div>-->
   </ion-content>
       

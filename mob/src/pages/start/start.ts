@@ -4,7 +4,6 @@ import { MycertPage } from '../mycert/mycert';
 import { GlobalProvider } from "../../providers/global/global";
 import { Storage } from '@ionic/storage';
 import { HttpClient } from '@angular/common/http';
-import { AnimationService, AnimationBuilder } from 'css-animator';
 
 
 @IonicPage()
@@ -16,7 +15,7 @@ export class StartPage {
   
 
   public profiles : Array<any> = [];
-  private baseURI : string  = this.global.mysite; 
+  //private baseURI : string  = this.global.mysite; 
 
   constructor(public navCtrl  : NavController, 
               public http     : HttpClient,
@@ -29,12 +28,12 @@ export class StartPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad StartPage');
-    this.load();
+    //this.load();
   }
 
   kodpengguna = "";
 
-  load() : void
+  /*load() : void
   {
     this.storage.get('kod_pengguna').then((kod_pengguna) => { 
     this.kodpengguna = kod_pengguna; console.log("session kod pengguna dekat profile",kod_pengguna);
@@ -56,8 +55,8 @@ export class StartPage {
         console.dir(error);
      });
      //--------------------------------------------------
-   }); //close storage
-  }
+   }); //close storage 
+  } */
   
   claim(params : any){
     this.navCtrl.push(MycertPage, params);

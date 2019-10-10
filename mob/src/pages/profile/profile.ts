@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, MenuController, NavController, NavParams } from 'ionic-angular';
 import { GlobalProvider } from "../../providers/global/global";
 import { HttpClient } from '@angular/common/http';
+import { Observable } from "./../../../node_modules/rxjs/Observable";
 import { Storage } from '@ionic/storage';
 import { EditprofilePage } from '../editprofile/editprofile';
 import { ChangepassPage } from '../changepass/changepass';
@@ -16,6 +17,7 @@ import { StartPage } from '../start/start';
 })
 export class ProfilePage {
 
+  public items : Array<any> = [];
   public profiles : Array<any> = [];
   private baseURI : string  = this.global.mysite; 
  
@@ -78,5 +80,15 @@ export class ProfilePage {
  logout(): void {
     this.navCtrl.push(ListPage);
  }
+
+ getPtj() {
+
+  let url = '../../assets/jsonfile/russel.json';
+  let data: Observable<any> = this.http.get(url);
+  data.subscribe(result => {
+    this.items = result;
+  });
+
+}
 
 }

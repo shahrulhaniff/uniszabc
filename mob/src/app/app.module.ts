@@ -34,9 +34,11 @@ import { File } from '@ionic-native/file/ngx';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
 import {  FileTransfer,  FileTransferObject  } from '@ionic-native/file-transfer';
 import { Clipboard } from '@ionic-native/clipboard';
-import { PdfViewerPage } from '../pages/pdf-viewer/pdf-viewer';
+import { PfdmodalPage } from '../pages/pfdmodal/pfdmodal';
+//import { PdfViewerPage } from '../pages/pdf-viewer/pdf-viewer';
 //import { PdfViewerModule } from 'ng2-pdf-viewer';
 //import { PdfJsViewerModule } from 'ng2-pdfjs-viewer';
+//import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,8 @@ import { PdfViewerPage } from '../pages/pdf-viewer/pdf-viewer';
     MycertPage,
     PenafianPage,
     PrivatekeyPage,
-    PdfViewerPage,
+    //PdfViewerPage,
+    PfdmodalPage,
     ParallaxHeader
     
     
@@ -66,9 +69,10 @@ import { PdfViewerPage } from '../pages/pdf-viewer/pdf-viewer';
     IonicModule.forRoot(MyApp),
     HttpClientModule,
     IonicStorageModule.forRoot(),
-    NgxQRCodeModule, 
-    //PdfViewerModule
-    //PdfJsViewerModule
+    NgxQRCodeModule
+    //,DocumentViewer
+    //,PdfJsViewerModule
+    //,PdfViewerModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -84,7 +88,8 @@ import { PdfViewerPage } from '../pages/pdf-viewer/pdf-viewer';
     MycertPage,
     PenafianPage,
     PrivatekeyPage,
-    PdfViewerPage
+    PfdmodalPage,
+    //PdfViewerPage
     
   ],
   providers: [

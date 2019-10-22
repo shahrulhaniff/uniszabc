@@ -1,31 +1,30 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams ,MenuController,ViewController ,App } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, App } from 'ionic-angular';
 import { StartPage } from '../start/start';
 
 @IonicPage()
 @Component({
-  selector: 'page-pdf-viewer',
-  templateUrl: 'pdf-viewer.html',
+  selector: 'page-pfdmodal',
+  templateUrl: 'pfdmodal.html',
 })
-export class PdfViewerPage {
+export class PfdmodalPage {
 
   displayData: any = {};
-  
+
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
-              public menuCtrl: MenuController,
               public viewCtrl: ViewController,
               public appCtrl: App) {
-    this.menuCtrl.enable(true, 'myMenu');
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PdfViewerPage');
-    
+    console.log('ionViewDidLoad PfdmodalPage');
     this.displayData = this.navParams.get('displayData');
   }
-
-  close(){
+  onClose(): void {
+    this.viewCtrl.dismiss();
+  }
+  myClose(){
     //this.navCtrl.push(StartPage);
     //this.navCtrl.setRoot(StartPage);
     this.viewCtrl.dismiss().then(() => {
@@ -33,4 +32,5 @@ export class PdfViewerPage {
     this.appCtrl.getRootNav().setRoot(StartPage);
   });
   }
+
 }

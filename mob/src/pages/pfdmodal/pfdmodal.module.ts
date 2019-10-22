@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { PdfViewerPage } from './pdf-viewer';
+import { PfdmodalPage } from './pfdmodal';
 
 @NgModule({
   declarations: [
-    PdfViewerPage,
+    PfdmodalPage,
   ],
   imports: [
-    IonicPageModule.forChild(PdfViewerPage),
+    IonicPageModule.forChild(PfdmodalPage),
   ],
 })
-export class PdfViewerPageModule {}
+export class PfdmodalPageModule {}

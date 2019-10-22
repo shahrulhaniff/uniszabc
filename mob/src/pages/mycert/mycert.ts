@@ -7,7 +7,8 @@ import { GlobalProvider } from "../../providers/global/global";
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable } from "./../../../node_modules/rxjs/Observable";
 import { Modal, ModalController } from 'ionic-angular';
-import { PdfViewerPage } from '../pdf-viewer/pdf-viewer';
+import { PfdmodalPage } from '../pfdmodal/pfdmodal';
+//import { PdfViewerPage } from '../pdf-viewer/pdf-viewer';
 
 
 
@@ -98,7 +99,7 @@ export class MycertPage {
   //public pdfSrc : any = "../../assets/documents/cert.pdf";
   pdfSrc = "https://drive.google.com/open?id=1eB5QBlK32ANUbzNrWyAu1SXqnxk0ORIw";
   getView(){
-    let modal: Modal = this.modalCtrl.create(PdfViewerPage, {
+    let modal: Modal = this.modalCtrl.create(PfdmodalPage, {
       displayData:{
         pdfSource: {
           url : '../../assets/documents/cert.pdf', withCredentials: true

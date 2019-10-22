@@ -30,4 +30,5 @@ export class HomePage {
  scan(): void {
     this.navCtrl.push('ScanPage');
  }
+ 
 }

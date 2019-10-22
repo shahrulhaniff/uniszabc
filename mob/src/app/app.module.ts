@@ -23,16 +23,20 @@ import { EditprofilePage } from '../pages/editprofile/editprofile';
 import { ChangepassPage } from '../pages/changepass/changepass';
 import { IonTextAvatar } from 'ionic-text-avatar';
 
-import { File } from '@ionic-native/file/ngx';
-import { FileOpener } from '@ionic-native/file-opener/ngx';
 import { ParallaxHeader } from '../directives/parallax-header/parallax-header';
 import { HubungiPage } from '../pages/hubungi/hubungi';
 import { MycertPage } from '../pages/mycert/mycert';
 import { PenafianPage } from '../pages/penafian/penafian';
 import { StartPage } from '../pages/start/start';
+import { PrivatekeyPage } from '../pages/privatekey/privatekey';
 
-
-
+import { File } from '@ionic-native/file/ngx';
+import { FileOpener } from '@ionic-native/file-opener/ngx';
+import {  FileTransfer,  FileTransferObject  } from '@ionic-native/file-transfer';
+import { Clipboard } from '@ionic-native/clipboard';
+import { PdfViewerPage } from '../pages/pdf-viewer/pdf-viewer';
+//import { PdfViewerModule } from 'ng2-pdf-viewer';
+//import { PdfJsViewerModule } from 'ng2-pdfjs-viewer';
 
 @NgModule({
   declarations: [
@@ -51,6 +55,8 @@ import { StartPage } from '../pages/start/start';
     StartPage,
     MycertPage,
     PenafianPage,
+    PrivatekeyPage,
+    PdfViewerPage,
     ParallaxHeader
     
     
@@ -60,7 +66,9 @@ import { StartPage } from '../pages/start/start';
     IonicModule.forRoot(MyApp),
     HttpClientModule,
     IonicStorageModule.forRoot(),
-    NgxQRCodeModule
+    NgxQRCodeModule, 
+    //PdfViewerModule
+    //PdfJsViewerModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -74,7 +82,9 @@ import { StartPage } from '../pages/start/start';
     HubungiPage,
     StartPage,
     MycertPage,
-    PenafianPage
+    PenafianPage,
+    PrivatekeyPage,
+    PdfViewerPage
     
   ],
   providers: [
@@ -86,7 +96,10 @@ import { StartPage } from '../pages/start/start';
     GlobalProvider,
     InAppBrowser,
     File,
-    FileOpener
+    FileOpener,
+    FileTransfer,  
+    FileTransferObject,
+    Clipboard
     
 
   ]

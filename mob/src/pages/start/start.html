@@ -1,5 +1,5 @@
 <ion-header no-border>
-  <ion-navbar  transparent no-border>
+  <ion-navbar transparent no-border>
       <button ion-button menuToggle>
           <ion-icon name="menu" color="dark"></ion-icon>
         </button>
@@ -28,29 +28,53 @@
 <div padding *ngFor="let profile of profiles">-->
 <ion-card class="card3" >
   <ion-list>
-      <ion-item color="theme">
-          <ion-icon item-start name="md-bookmarks"></ion-icon> 
+    <ion-item class="header">
+      <ion-icon name="ios-contact"></ion-icon> &nbsp;MY CERTIFICATE
+    </ion-item>
+      <ion-item class="top_line" color="theme">
           <!--<h1 text-wrap>{{profile.nama}}</h1> 
           <h3>{{profile.email}}</h3>-->
-          <h1 text-wrap>MUHAMMAD SHAHRUL HANIFF BIN OSMAN</h1> 
-          <h3>shahrul@putra.unisza.edu.my</h3>
+          <h1 text-wrap>{{fn}} {{ln}}</h1> 
+          <h3>{{usr}}</h3>
       </ion-item>
-    <ion-item class="top_line">
-      <ion-label text-wrap>
-        <p class="bold">Highest Certificate</p>
-        <h3>Bachelor in Science Computer Software Development with Honor </h3>
-      </ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        <p class="bold">Matric Number</p>
-        <h3>BTAL15040471</h3>
-      </ion-label>
-    </ion-item>
   </ion-list>
 </ion-card>
 <!-- End Profile -->
-  <ion-card>
+<ion-card>
+  <ion-list>
+    <ion-item-sliding>
+      <ion-item>
+        <ion-row>
+          <ion-col text-wrap>
+            <h2 class="bold">{{certificationName}}</h2> 
+          </ion-col>
+        </ion-row>
+        
+        <button class="smallnone" *ngIf="isClaimed == false">Certificate Claim :</button>
+        <button class="smallr" *ngIf="isClaimed == false">No</button>
+        <button class="smallg" *ngIf="isClaimed == true">Yes</button>
+      </ion-item>
+      <ion-item *ngIf="isClaimed == false" (click)="claim()" class="top_lineB" color="card2">
+            <ion-icon name="md-list-box"></ion-icon> &nbsp; CLAIM
+        </ion-item>
+        <ion-item *ngIf="isClaimed == true" (click)="certInfo()" class="top_line1" color="card2">
+              <ion-icon name="md-list-box"></ion-icon> &nbsp; VIEW CERTIFICATE
+          </ion-item>
+
+        <ion-item-options side="right">
+          <button ion-button color="secondary">
+            <ion-icon name="locate"></ion-icon>
+            Locate
+          </button>
+          <button ion-button color="primary">
+              <ion-icon name="contract"></ion-icon>
+              UniSZA
+            </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </ion-card>
+  <!--<ion-card>
   <ion-list>
     <ion-item-sliding>
       <ion-item>
@@ -105,7 +129,7 @@
             </ion-item-options>
           </ion-item-sliding>
         </ion-list>
-      </ion-card>
+      </ion-card> -->
 <!--</div>
 
 <ion-card class="card4">

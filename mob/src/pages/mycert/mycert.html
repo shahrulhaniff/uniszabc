@@ -21,16 +21,27 @@
   </ion-refresher>
 
 <div padding>
-    <ion-chip>
-        <ion-avatar item-start>
-          <ion-text-avatar>></ion-text-avatar>
-        </ion-avatar>
-        <ion-label class="bold">
-          Claimed Cert Info
-        </ion-label>
-      </ion-chip>
 </div>
-
+<div *ngIf="isClaimed==false" padding>
+<form [formGroup]="form" (ngSubmit)="popup()" #loginForm="ngForm">
+      <ion-row>
+        <ion-col>
+          <ion-list inset>
+            <ion-item>
+              <ion-input type="text" placeholder="Paste your private key here" formControlName="pk" required></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row>
+          <ion-col class="signup-col">
+            <button ion-button class="submit-btn" full type="submit" [disabled]="!loginForm.form.valid">CLAIM</button><br>
+          </ion-col>
+      </ion-row>
+    </form>  
+</div>
+<div *ngIf="isClaimed==true"><!--BUAT == Lepas siap-->
     <div padding text-center>
         <div>
               <ion-card class="card2">
@@ -41,7 +52,7 @@
         </div>
       </div>
   
-      <ion-card>
+      <!--<ion-card>
       <ion-row>
           <ion-col>
               <ion-buttons color="theme">
@@ -51,5 +62,6 @@
         </ion-row>
         <ion-row><ion-col><button ion-button full color="theme">DOWNLOAD</button></ion-col></ion-row>
 
-        </ion-card>
+        </ion-card>-->
+      </div>
 </ion-content>

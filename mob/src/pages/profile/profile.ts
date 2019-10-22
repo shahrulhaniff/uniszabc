@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, MenuController, NavController, NavParams } from 'ionic-angular';
 import { GlobalProvider } from "../../providers/global/global";
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from "./../../../node_modules/rxjs/Observable";
 import { Storage } from '@ionic/storage';
 import { EditprofilePage } from '../editprofile/editprofile';
@@ -17,6 +17,12 @@ import { StartPage } from '../start/start';
 })
 export class ProfilePage {
 
+
+  public fn : any ;
+  public ln : any ;
+  public token : any ;
+  public usr : any ;
+  
   public items : Array<any> = [];
   public profiles : Array<any> = [];
   private baseURI : string  = this.global.mysite; 
@@ -32,12 +38,38 @@ export class ProfilePage {
   }
 
   ionViewWillEnter() {
+    this.load2();
     //this.load();
+    //this.getRussel();
     console.log('ionViewDidLoad ProfilePage');
   }
 
-  kodpengguna = "";
-
+  load2() : void
+  { 
+    this.storage.get('firstnamez').then((firstnamez) => { this.fn = firstnamez; }); 
+    this.storage.get('lastnamez').then((lastnamez) => { this.ln = lastnamez; });
+    this.storage.get('tokenz').then((tokenz) => { this.token = tokenz; });
+    this.storage.get('user').then((usr) => { this.usr = usr; });
+  }
+  
+  Certificate_Claim() : void
+  {
+      this.storage.get('tokenz').then((tokenz) => {
+      let url       : any = this.baseURI+'api/v1/contract/claim/certificate',
+      body 	    : any	= {'token': tokenz},
+      headers 	: any	= new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' }),
+      data      : Observable<any> = this.http.get(url);
+      this.http.put(url, body, headers)
+      .subscribe((data : any) =>
+      {
+        console.log(data);
+      },
+      error => {
+        console.log("Error!");
+        console.log(error);
+      }); 
+   }); //close storage
+  }
  /* load() : void
   {
     this.storage.get('kod_pengguna').then((kod_pengguna) => { 
@@ -81,14 +113,29 @@ export class ProfilePage {
     this.navCtrl.push(ListPage);
  }
 
- getPtj() {
+ /*
+const endpoint = 'http://localhost:3000/api/v1/';
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json'
+  })
+}; */
 
-  let url = '../../assets/jsonfile/russel.json';
-  let data: Observable<any> = this.http.get(url);
-  data.subscribe(result => {
-    this.items = result;
-  });
+ hantar = "Recipient";
+ getRussel() {
+  let url       = '../assets/jsonfile/ICert.postman_collection.json',
+      data      : Observable<any> = this.http.get(url),
+      headers 	: any	= new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' }),
+      options 	: any	= { "name" : this.hantar};
 
+  this.http.post(url, JSON.stringify(options), headers)
+      .subscribe((record : any) => 
+      {
+        console.log(record);
+      },
+      error => {
+        console.log("Error!");
+        console.log(error);
+      });
 }
-
 }

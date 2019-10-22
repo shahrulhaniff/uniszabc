@@ -34,9 +34,26 @@ page-start {
       color: rgb(0, 0, 0);
       font-weight: bold;
     }
-    .small{
-      width: 6rem;
-      color: rgb(226, 24, 24);
+    .smallr{
+      width: 5rem;
+      height: 2rem;
+      background-color: rgb(255, 21, 21);
+      color: #fff;
+      border-radius: 2px;
+    }
+    .smallg{
+      width: 5rem;
+      height: 2rem;
+      background-color: rgb(1, 170, 9);
+      color: #fff;
+      border-radius: 2px;
+    }
+    .smallnone{
+      //width: 5rem;
+      box-shadow:none;
+      height: 2rem;
+      background-color: transparent;
+      color: rgb(0, 0, 0);
       border-radius: 2px;
     }
       .rounded{
@@ -82,6 +99,11 @@ page-start {
         right: 0px;
         background-color: red;
         color: rgb(253, 2, 2);
+     }
+     .header {
+      color: rgba(107, 88, 2, 0.904);
+      border-top: 1px solid rgb(0, 10, 26);
+      font-weight: bold;
      }
   }
   

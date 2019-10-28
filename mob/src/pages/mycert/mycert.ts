@@ -8,6 +8,7 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable } from "./../../../node_modules/rxjs/Observable";
 import { Modal, ModalController } from 'ionic-angular';
 import { PfdmodalPage } from '../pfdmodal/pfdmodal';
+import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser/ngx';
 //import { PdfViewerPage } from '../pdf-viewer/pdf-viewer';
 
 
@@ -37,6 +38,7 @@ export class MycertPage {
               public storage  : Storage,
               public fb         : FormBuilder,
               private loadingCtrl: LoadingController,
+              private inAppBrowser : InAppBrowser,
               private modalCtrl: ModalController) {
 
     /* Buat validation */
@@ -48,7 +50,8 @@ export class MycertPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad MycertPage');
     this.ccheckc();
-    this.getView();
+    //this.getCert(); //pdf tak jadi - problem version myb
+    this.getCert2();
   }
 
   ccheckc(){
@@ -97,8 +100,8 @@ export class MycertPage {
 
   //public pdfSrc : any = "http://18.136.211.207:4400/api/v1/view/certificate?certificateId=5dada31e1ee2f866423900ff&fileId=5dada3271ee2f8664239011a";
   //public pdfSrc : any = "../../assets/documents/cert.pdf";
-  pdfSrc = "https://drive.google.com/open?id=1eB5QBlK32ANUbzNrWyAu1SXqnxk0ORIw";
-  getView(){
+  pdfSrc = "https://drive.google.com/file/d/1eB5QBlK32ANUbzNrWyAu1SXqnxk0ORIw/view";
+  getCert(){
     let modal: Modal = this.modalCtrl.create(PfdmodalPage, {
       displayData:{
         pdfSource: {
@@ -108,7 +111,11 @@ export class MycertPage {
     });
     modal.present();
     console.log(modal);
-    } 
+    }
+    getCert2(){
+      let uri = this.pdfSrc;
+      this.openWebpage(uri);
+    }
 
 
     //ENDGAME_API
@@ -131,4 +138,16 @@ export class MycertPage {
           }); 
         }
     //ENDGAME_API
+
+    openWebpage(url:string){
+      const options: InAppBrowserOptions = {zoom: 'yes'}
+      const browser = this.inAppBrowser.create(url, '_self', options);
+      //browser.close(); TAK JADI NI TRY BUAT KALAU JUMPA URL_DONE & SET MASA TIMEOUT PUN TAJADI
+      //if(url == "http://localhost/cashless2/app/done.php"){setTimeout(function () {browser.close();}, 1000);}
+      //this.navCtrl.setRoot(MigsPage);
+      this.navCtrl.setRoot(MycertPage, {
+        //record: this.id_kodtransaksi
+      });
+  
+    }
 }

@@ -42,7 +42,7 @@ export class StartPage {
   }
 
   load() : void
-  { 
+  {
     this.storage.get('firstnamez').then((firstnamez) => { this.fn = firstnamez; });
     this.storage.get('lastnamez').then((lastnamez) => { this.ln = lastnamez; });
     this.storage.get('tokenz').then((tokenz) => { this.token = tokenz; });

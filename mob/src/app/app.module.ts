@@ -38,7 +38,7 @@ import { PfdmodalPage } from '../pages/pfdmodal/pfdmodal';
 //import { PdfViewerPage } from '../pages/pdf-viewer/pdf-viewer';
 //import { PdfViewerModule } from 'ng2-pdf-viewer';
 //import { PdfJsViewerModule } from 'ng2-pdfjs-viewer';
-//import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
+import { DocumentViewer } from '@ionic-native/document-viewer';
 
 @NgModule({
   declarations: [
@@ -88,8 +88,7 @@ import { PfdmodalPage } from '../pages/pfdmodal/pfdmodal';
     MycertPage,
     PenafianPage,
     PrivatekeyPage,
-    PfdmodalPage,
-    //PdfViewerPage
+    PfdmodalPage
     
   ],
   providers: [
@@ -105,6 +104,7 @@ import { PfdmodalPage } from '../pages/pfdmodal/pfdmodal';
     FileTransfer,  
     FileTransferObject,
     Clipboard
+    ,DocumentViewer
     
 
   ]
